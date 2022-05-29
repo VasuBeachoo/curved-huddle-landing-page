@@ -1,0 +1,110 @@
+///////////////////////////////////////
+// VARIABLES //////////////////////////
+
+$colors: (
+  Pink: hsl(322, 100%, 66%),
+  Light-pink: hsl(321, 100%, 78%),
+  Light-red: hsl(0, 100%, 63%),
+  Very-dark-cyan: hsl(192, 100%, 9%),
+  Very-pale-blue: hsl(207, 100%, 98%),
+);
+
+///////////////////////////////////////
+// MIXINS /////////////////////////////
+
+@mixin flex($direction: row, $justify: flex-start, $align: flex-start) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+///////////////////////////////////////
+// FUNCTIONS //////////////////////////
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+///////////////////////////////////////
+//// STYLES ///////////////////////////
+
+body {
+  margin: 0;
+}
+
+.page-container {
+  @include flex(row, center, center);
+}
+
+.page {
+  @include flex(column, flex-start, center);
+}
+
+.intro {
+  @include flex(column, flex-start, center);
+
+  &__header-container {
+    @include flex(row, flex-start, center);
+  }
+
+  &__img-text-container {
+    @include flex(column, flex-start, center);
+  }
+
+  &__text-container {
+    @include flex(column, flex-start, center);
+  }
+
+  &__img-container {
+    @include flex(column, flex-start, center);
+  }
+
+  &__stats-container {
+    @include flex(row, flex-start, center);
+  }
+
+  &__stat-container {
+    @include flex(column, flex-start, center);
+  }
+}
+
+.blocks {
+  @include flex(column, flex-start, center);
+
+  &__img-text-container {
+    @include flex(row, flex-start, center);
+
+    &--reverse {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__text-container {
+    @include flex(column, center, center);
+  }
+
+  &__img-container {
+    @include flex(column, center, center);
+  }
+}
+
+.cta {
+  @include flex(column, center, center);
+
+  &__container {
+    @include flex(column, flex-start, center);
+  }
+}
+
+.footer {
+  @include flex(row, flex-start, center);
+
+  &__columns-container {
+    @include flex(row, flex-start, center);
+  }
+
+  &__column {
+    @include flex(column, flex-start, flex-start);
+  }
+}
