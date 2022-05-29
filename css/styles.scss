@@ -7,7 +7,12 @@ $colors: (
   Light-red: hsl(0, 100%, 63%),
   Very-dark-cyan: hsl(192, 100%, 9%),
   Very-pale-blue: hsl(207, 100%, 98%),
+  White: hsl(0, 100%, 100%),
+  Gray: rgba(34, 33, 33, 0.429),
 );
+
+$heading-font: "Poppins", sans-serif;
+$body-font: "Open Sans", sans-serif;
 
 ///////////////////////////////////////
 // MIXINS /////////////////////////////
@@ -17,6 +22,34 @@ $colors: (
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
+}
+
+@mixin heading($font-size: 30px) {
+  font-family: $heading-font;
+  font-size: $font-size;
+  font-weight: 700;
+  margin: 0;
+}
+
+@mixin paragraph($font-size: 14px) {
+  font-family: $body-font;
+  font-size: $font-size;
+  font-weight: 600;
+  max-width: 520px;
+  letter-spacing: 0.2px;
+  line-height: 25px;
+}
+
+@mixin btn() {
+  background-color: color(Pink);
+  color: color(White);
+  font-family: $body-font;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  padding: 20px 100px;
+  letter-spacing: 0.4px;
 }
 
 ///////////////////////////////////////
@@ -35,6 +68,7 @@ body {
 
 .page-container {
   @include flex(row, center, center);
+  min-height: 100vh;
 }
 
 .page {
@@ -43,9 +77,29 @@ body {
 
 .intro {
   @include flex(column, flex-start, center);
+  width: 100%;
 
   &__header-container {
     @include flex(row, flex-start, center);
+    width: 100%;
+  }
+
+  &__logo {
+    width: 175px;
+    margin: 50px 0 50px 70px;
+  }
+
+  &__header-btn {
+    background-color: color(White);
+    color: color(Light-pink);
+    border: 2px solid color(Light-pink);
+    border-radius: 20px;
+    font-family: $body-font;
+    font-size: 13.5px;
+    font-weight: 600;
+    padding: 8px 20px;
+    margin-left: auto;
+    margin-right: 70px;
   }
 
   &__img-text-container {
@@ -54,18 +108,57 @@ body {
 
   &__text-container {
     @include flex(column, flex-start, center);
+    text-align: center;
+    margin: 40px 0 95px;
+  }
+
+  &__heading {
+    @include heading(37px);
+  }
+
+  &__paragraph {
+    @include paragraph(17px);
+    margin-top: 20px;
+  }
+
+  &__btn {
+    @include btn();
+    margin-top: 15px;
   }
 
   &__img-container {
     @include flex(column, flex-start, center);
+    margin-bottom: 80px;
+  }
+
+  &__img {
+    width: 800px;
   }
 
   &__stats-container {
     @include flex(row, flex-start, center);
+    margin-bottom: 100px;
   }
 
   &__stat-container {
     @include flex(column, flex-start, center);
+    width: 500px;
+  }
+
+  &__stat-icon {
+    width: 35px;
+    margin-right: 125px;
+  }
+
+  &__stat-heading {
+    @include heading(60px);
+    font-family: $body-font;
+  }
+
+  &__stat-paragraph {
+    @include paragraph(17px);
+    color: color(Gray);
+    margin-top: 5px;
   }
 }
 
