@@ -244,6 +244,11 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
+}
+
+.blocks__block {
+  width: 100%;
 }
 
 .blocks__img-text-container {
@@ -260,6 +265,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #f5faff;
+  margin: 0;
 }
 
 .blocks__img-text-container--reverse {
@@ -267,6 +274,7 @@ body {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
+  background-color: white;
 }
 
 .blocks__text-container {
@@ -280,9 +288,27 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 0 120px;
+}
+
+.blocks__heading {
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.blocks__paragraph {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  max-width: 520px;
+  letter-spacing: 0.2px;
+  line-height: 25px;
+  max-width: 450px;
 }
 
 .blocks__img-container {
@@ -299,6 +325,46 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.blocks__img {
+  width: 450px;
+}
+
+#block-img-1 {
+  margin: 40px 0;
+}
+
+#block-img-2 {
+  margin: 70px 0;
+}
+
+#block-img-3 {
+  margin: 20px 0;
+}
+
+#block-1-before {
+  background: url("../images/bg-section-top-desktop-1.svg");
+  width: 100%;
+  height: 155px;
+}
+
+#block-1-after {
+  background: url("../images/bg-section-bottom-desktop-1.svg");
+  width: 100%;
+  height: 135px;
+}
+
+#block-3-before {
+  background: url("../images/bg-section-top-desktop-2.svg");
+  width: 100%;
+  height: 155px;
+}
+
+#block-3-after {
+  background: url("../images/bg-section-bottom-desktop-2.svg");
+  width: 100%;
+  height: 135px;
 }
 
 .cta {
