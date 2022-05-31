@@ -9,6 +9,7 @@ $colors: (
   Very-pale-blue: hsl(207, 100%, 98%),
   White: hsl(0, 100%, 100%),
   Gray: rgba(34, 33, 33, 0.429),
+  Cyan: #00ffff,
 );
 
 $heading-font: "Poppins", sans-serif;
@@ -37,7 +38,7 @@ $body-font: "Open Sans", sans-serif;
   font-weight: 600;
   max-width: 520px;
   letter-spacing: 0.2px;
-  line-height: 25px;
+  line-height: 26px;
 }
 
 @mixin btn() {
@@ -81,6 +82,7 @@ body {
 
 .page {
   @include flex(column, flex-start, center);
+  width: 100%;
 }
 
 .intro {
@@ -153,7 +155,7 @@ body {
 
   &__stats-container {
     @include flex(row, flex-start, center);
-    margin-bottom: 100px;
+    margin-bottom: 70px;
   }
 
   &__stat-container {
@@ -203,11 +205,11 @@ body {
   }
 
   &__heading {
-    @include heading();
+    @include heading(35px);
   }
 
   &__paragraph {
-    @include paragraph();
+    @include paragraph(17px);
     max-width: 450px;
   }
 
@@ -261,11 +263,11 @@ body {
 
   &__container {
     @include flex(column, flex-start, center);
-    margin: 100px 0;
+    margin: 80px 0 150px;
   }
 
   &__heading {
-    @include heading();
+    @include heading(35px);
   }
 
   &__btn {
@@ -276,12 +278,112 @@ body {
 
 .footer {
   @include flex(row, flex-start, center);
+  background-color: color(Very-dark-cyan);
+  color: color(Very-pale-blue);
+  width: 100%;
+  padding: 40px 0 60px;
 
   &__columns-container {
-    @include flex(row, flex-start, center);
+    @include flex(row, space-around, flex-start);
+    width: 100%;
   }
 
   &__column {
     @include flex(column, flex-start, flex-start);
   }
+
+  &__logo {
+    filter: brightness(0) invert(1);
+    width: 180px;
+    margin-bottom: 20px;
+  }
+
+  &__paragraph {
+    @include paragraph();
+    max-width: 350px;
+    margin: 7px 0;
+  }
+
+  &__icon {
+    margin-right: 15px;
+  }
+
+  &__icon-text-container {
+    @include flex(row, flex-start, center);
+  }
+
+  &__social-media-icons {
+    margin-top: 40px;
+  }
+
+  &__social-media-icon {
+    font-size: 30px;
+    margin-right: 17px;
+    transition: 0.2s;
+
+    &:hover {
+      cursor: pointer;
+      color: color(Cyan);
+    }
+  }
+
+  &__heading {
+    @include heading(20px);
+    font-family: $body-font;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  &__form {
+    margin-top: 20px;
+  }
+
+  &__form-container {
+    @include flex(row, flex-start, flex-start);
+  }
+
+  &__email-input-container {
+    @include flex(column, flex-start, flex-start);
+  }
+
+  &__email-input {
+    font-family: $body-font;
+    width: 280px;
+    border-radius: 6px;
+    padding: 10px;
+  }
+
+  &__error-msg {
+    @include paragraph(12px);
+    color: color(Light-red);
+    margin: 2px 0 0 5px;
+
+    &--visible {
+      display: block;
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__submit-input {
+    @include btn();
+    font-size: 13.5px;
+    border-radius: 6px;
+    padding: 11px 30px;
+    margin-left: 25px;
+
+    &:hover {
+      background-color: color(White);
+      color: color(Pink);
+      opacity: 1;
+    }
+  }
+}
+
+#footer-before {
+  background: url("../images/bg-footer-top-desktop.svg");
+  width: 100%;
+  height: 150px;
 }

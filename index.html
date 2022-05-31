@@ -140,6 +140,7 @@
             <button class="cta__btn">Get Started For Free</button>
           </div>
         </section>
+        <div id="footer-before" class="footer__footer-img"></div>
         <footer class="footer">
           <div class="footer__columns-container">
             <div class="footer__column">
@@ -181,11 +182,15 @@
                 weekly newsletter. We'll never send you spam or pass on your
                 email address.
               </p>
-              <form class="footer__form">
+              <form class="footer__form" novalidate>
                 <div class="footer__form-container">
                   <div class="footer__email-input-container">
-                    <input type="email" class="footer__email-input" />
-                    <p class="footer__error-msg">
+                    <input
+                      type="email"
+                      class="footer__email-input"
+                      placeholder="Email Address"
+                    />
+                    <p class="footer__error-msg footer__error-msg--hidden">
                       Please enter a valid email address
                     </p>
                   </div>
