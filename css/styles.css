@@ -85,6 +85,15 @@ body {
   padding: 8px 20px;
   margin-left: auto;
   margin-right: 70px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.intro__header-btn:hover {
+  cursor: pointer;
+  opacity: 0.6;
 }
 
 .intro__img-text-container {
@@ -148,7 +157,16 @@ body {
   border-radius: 30px;
   padding: 20px 100px;
   letter-spacing: 0.4px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
   margin-top: 15px;
+}
+
+.intro__btn:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }
 
 .intro__img-container {
@@ -397,6 +415,36 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 100px 0;
+}
+
+.cta__heading {
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.cta__btn {
+  background-color: #ff52bf;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  padding: 20px 100px;
+  letter-spacing: 0.4px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  margin-top: 30px;
+}
+
+.cta__btn:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }
 
 .footer {
