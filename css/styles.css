@@ -607,6 +607,10 @@ body {
   padding: 10px;
 }
 
+.footer__email-input--invalid {
+  border: 2px solid #ff4242;
+}
+
 .footer__error-msg {
   font-family: "Open Sans", sans-serif;
   font-size: 12px;

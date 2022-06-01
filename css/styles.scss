@@ -351,6 +351,10 @@ body {
     width: 280px;
     border-radius: 6px;
     padding: 10px;
+
+    &--invalid {
+      border: 2px solid color(Light-red);
+    }
   }
 
   &__error-msg {
