@@ -15,6 +15,8 @@ $colors: (
 $heading-font: "Poppins", sans-serif;
 $body-font: "Open Sans", sans-serif;
 
+$mobile-width: 1100px;
+
 ///////////////////////////////////////
 // MIXINS /////////////////////////////
 
@@ -58,6 +60,12 @@ $body-font: "Open Sans", sans-serif;
   &:hover {
     cursor: pointer;
     opacity: 0.7;
+  }
+}
+
+@mixin mobile() {
+  @media (max-width: $mobile-width) {
+    @content;
   }
 }
 
@@ -215,6 +223,7 @@ body {
 
   &__img-container {
     @include flex(column, center, center);
+    margin: 0 80px;
   }
 
   &__img {
@@ -390,4 +399,114 @@ body {
   background: url("../images/bg-footer-top-desktop.svg");
   width: 100%;
   height: 150px;
+}
+
+@include mobile() {
+  .intro {
+    &__logo {
+      width: 140px;
+    }
+
+    &__header-btn {
+      font-size: 13px;
+    }
+
+    &__heading {
+      font-size: 32px;
+      max-width: 360px;
+    }
+
+    &__paragraph {
+      font-size: 16px;
+      max-width: 360px;
+    }
+
+    &__img {
+      width: 340px;
+    }
+
+    &__stats-container {
+      @include flex(column, flex-start, center);
+      margin-bottom: 0;
+    }
+
+    &__stat-container {
+      margin-bottom: 50px;
+    }
+
+    &__stat-icon {
+      margin-right: 115px;
+    }
+
+    &__stat-heading {
+      font-size: 55px;
+    }
+  }
+
+  .blocks {
+    &__img-text-container {
+      @include flex(column-reverse, flex-start, center);
+    }
+
+    &__img {
+      width: 300px;
+    }
+
+    &__text-container {
+      @include flex(column, flex-start, center);
+      text-align: center;
+      margin: 0 50px 50px;
+    }
+
+    &__heading {
+      font-size: 33px;
+      max-width: 360px;
+    }
+
+    &__paragraph {
+      font-size: 16px;
+      max-width: 360px;
+    }
+  }
+
+  #block-img-2 {
+    margin: 40px 0;
+  }
+
+  #block-img-3 {
+    margin: 0 0 40px;
+  }
+
+  .cta {
+    text-align: center;
+
+    &__heading {
+      font-size: 32px;
+      max-width: 360px;
+    }
+  }
+
+  .footer {
+    padding: 20px 0 0;
+
+    &__columns-container {
+      @include flex(column-reverse, flex-start, center);
+    }
+
+    &__column {
+      margin-bottom: 80px;
+    }
+
+    &__form-container {
+      @include flex(column, flex-start, center);
+    }
+
+    &__email-input {
+      margin-right: 0;
+    }
+
+    &__submit-input {
+      margin: 20px 0 0 auto;
+    }
+  }
 }
